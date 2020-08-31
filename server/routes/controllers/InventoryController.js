@@ -7,6 +7,9 @@ const InventoryService = require('../../services/InventoryService')
 router.post('/do-something', async (req, res) => {
     // business logic
     // InventoryService.function()
+    console.log('do-something')
+    InventoryService.insertIntoInventory(); 
+    res.send('success')
 })
 
 module.exports = router
