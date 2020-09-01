@@ -22,10 +22,16 @@ class InventoryService {
             vendor: 'Karl Strauss', 
          }, function (err, small) {
             if (err) return console.log(err) 
-            console.log(small)
             console.log('saved')
             // saved!
           });
+    }
+
+    static async getAllInventory() {
+        InventoryModel.find(function (err, data) {
+            if (err) return console.log(err)
+            console.log(data)
+        })
     }
 
 }

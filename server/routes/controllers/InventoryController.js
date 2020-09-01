@@ -8,7 +8,7 @@ router.post('/do-something', async (req, res) => {
     // business logic
     // InventoryService.function()
     console.log('do-something')
-    InventoryService.insertIntoInventory(); 
+    InventoryService.getAllInventory(); 
     res.send('success')
 })
 
