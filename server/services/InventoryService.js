@@ -9,20 +9,11 @@ class InventoryService {
         // data base query
     }
 
-    static async insertIntoInventory() {
+    static async insertIntoInventory(inventoryItem) {
         console.log('insertIntoInventory')
-        InventoryModel.create({ 
-            name: 'Boat Shoes',
-            inventory: 5, 
-            category: 'Beer', 
-            high_par: 5, 
-            low_par: 3, 
-            high_order_day: 5, 
-            low_order_day: 1, 
-            vendor: 'Karl Strauss', 
-         }, function (err, small) {
+        InventoryModel.create({ inventoryItem }, function (err, small) {
             if (err) return console.log(err) 
-            console.log('saved')
+            console.log('saved: ', small)
             // saved!
           });
     }
@@ -32,6 +23,15 @@ class InventoryService {
             if (err) return console.log(err)
             console.log(data)
         })
+    }
+
+    static async getInventoryByCategory(category) {
+        const inventory = InventoryModel.find({ category }, (err, data) => {
+            if (err) return console.log(err)
+            console.log(data)
+            return data
+        })
+        return inventory
     }
 
 }

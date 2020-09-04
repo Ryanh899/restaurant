@@ -1,6 +1,8 @@
 // mongoose connection
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb/test', {useNewUrlParser: true});
+mongoose.connect('mongodb://ryan:root@ec2-3-86-7-121.compute-1.amazonaws.com:27017/test', {useNewUrlParser: true},  { useUnifiedTopology: true });
+
+// mongodb://ryan:root@ec2-3-86-7-121.compute-1.amazonaws.com:27017/test
 
 const db = mongoose.connection;
 
